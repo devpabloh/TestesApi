@@ -30,7 +30,7 @@ function App() {
           <p>Temperatura {weatherData.main.temp}</p> 
           <p>Velocidade do vento: {weatherData.wind.speed}</p>
           <p>Descrição da água: {weatherData.weather.description}</p>
-          <p>Descrição da água: {weatherData.wind.deg}</p>
+          <p>Descrição da água: {weatherData.wind.degcd}</p>
          </div>
       ): <p>Carregar dados do clima</p>}
     </div>

@@ -4,18 +4,24 @@ import axios from "axios"
 import {useState, useEffect} from "react"
 
 function App() {
- const [Info, setInfo] = useState(null)
- const urlApi = '	https://api.adviceslip.com/advice'
+ const [info, setInfo] = useState(null)
+ const apiUrl = 'https://api.adviceslip.com/advice'
 
- useEffect(()=>{axios.get(urlApi)
-  .then (res => {
+  useEffect(()=>{
+    axios.get(apiUrl)
+    .then(res => {
     setInfo(res.data.slip)
   }) .catch(error => {console.error(error)})
- },[])
+ },[apiUrl])
 
   return (
     <div className="App">
-      <p>{slip.id}</p>
+      {info ? (
+      <div>
+        <p>Id: {info.id}</p>
+        <p>A frase do dia é: {info.advice}</p>  
+      </div>
+      ) : (<p>estudar</p>)}
     </div>
   );
 }
